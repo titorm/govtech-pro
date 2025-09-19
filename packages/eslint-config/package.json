@@ -1,0 +1,20 @@
+{
+    "name": "@govtech-pro/eslint-config",
+    "version": "1.0.0",
+    "description": "Shared ESLint configuration for GovTech Pro",
+    "main": "index.js",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.19.0",
+        "@typescript-eslint/parser": "^6.19.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-tailwindcss": "^3.14.0"
+    },
+    "peerDependencies": {
+        "eslint": "^8.0.0",
+        "typescript": "^5.0.0"
+    }
+}

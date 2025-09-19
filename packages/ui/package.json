@@ -1,0 +1,41 @@
+{
+    "name": "@govtech-pro/ui",
+    "version": "1.0.0",
+    "description": "Shared UI components for GovTech Pro",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "clean": "rm -rf dist",
+        "type-check": "tsc --noEmit",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.48",
+        "@types/react-dom": "^18.2.18",
+        "@types/node": "^20.11.0",
+        "typescript": "^5.3.3",
+        "@storybook/react": "^7.6.10",
+        "@storybook/react-vite": "^7.6.10"
+    },
+    "dependencies": {
+        "@govtech-pro/types": "workspace:*",
+        "@govtech-pro/utils": "workspace:*",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "tailwindcss": "^3.4.1",
+        "@headlessui/react": "^1.7.17",
+        "@heroicons/react": "^2.0.18",
+        "clsx": "^2.1.0",
+        "framer-motion": "^10.18.0",
+        "react-hook-form": "^7.49.2",
+        "@hookform/resolvers": "^3.3.2",
+        "zod": "^3.22.4"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    }
+}

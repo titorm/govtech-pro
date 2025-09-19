@@ -1,0 +1,22 @@
+{
+    "name": "@govtech-pro/utils",
+    "version": "1.0.0",
+    "description": "Shared utilities for GovTech Pro",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "clean": "rm -rf dist",
+        "type-check": "tsc --noEmit"
+    },
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "@types/node": "^20.11.0"
+    },
+    "dependencies": {
+        "@govtech-pro/types": "workspace:*",
+        "date-fns": "^3.2.0",
+        "zod": "^3.22.4"
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "govtech-pro",
+    "version": "1.0.0",
+    "description": "SaaS para Modernização da Gestão Pública",
+    "private": true,
+    "packageManager": "pnpm@8.15.0",
+    "scripts": {
+        "build": "turbo run build",
+        "dev": "turbo run dev",
+        "lint": "turbo run lint",
+        "test": "turbo run test",
+        "clean": "turbo run clean",
+        "type-check": "turbo run type-check",
+        "type-check:root": "tsc --noEmit",
+        "db:generate": "turbo run db:generate",
+        "db:migrate": "turbo run db:migrate",
+        "db:seed": "turbo run db:seed",
+        "db:backup": "turbo run db:backup",
+        "db:restore": "turbo run db:restore",
+        "deploy:vercel": "turbo run deploy:vercel"
+    },
+    "devDependencies": {
+        "@turbo/gen": "^1.12.4",
+        "turbo": "^1.12.4",
+        "typescript": "^5.3.3"
+    },
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    }
+}

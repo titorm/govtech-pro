@@ -1,0 +1,192 @@
+@import '@govtech-pro/ui/src/styles/globals.css';
+
+/* Additional citizen portal specific styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  /* Custom scrollbar for citizen portal */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-citizen-primary/20 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-citizen-primary/40;
+  }
+}
+
+@layer components {
+  /* Citizen portal specific components */
+  .citizen-card {
+    @apply bg-white rounded-xl shadow-citizen border border-gray-100 p-6 transition-all duration-200 hover:shadow-citizen-lg hover:border-citizen-primary/20;
+  }
+  
+  .citizen-button-primary {
+    @apply bg-citizen-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-citizen-primary/90 focus:ring-2 focus:ring-citizen-primary/20 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .citizen-button-secondary {
+    @apply bg-white text-citizen-primary border-2 border-citizen-primary px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-citizen-primary hover:text-white focus:ring-2 focus:ring-citizen-primary/20 focus:outline-none;
+  }
+  
+  .citizen-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-citizen-primary/20 focus:border-citizen-primary transition-colors duration-200;
+  }
+  
+  .citizen-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .citizen-badge-success {
+    @apply citizen-badge bg-green-100 text-green-800;
+  }
+  
+  .citizen-badge-warning {
+    @apply citizen-badge bg-yellow-100 text-yellow-800;
+  }
+  
+  .citizen-badge-error {
+    @apply citizen-badge bg-red-100 text-red-800;
+  }
+  
+  .citizen-badge-info {
+    @apply citizen-badge bg-blue-100 text-blue-800;
+  }
+  
+  /* Service category icons */
+  .service-icon {
+    @apply w-12 h-12 p-3 rounded-lg bg-citizen-primary/10 text-citizen-primary flex items-center justify-center;
+  }
+  
+  /* Protocol status indicators */
+  .protocol-status-received {
+    @apply citizen-badge-info;
+  }
+  
+  .protocol-status-in_analysis {
+    @apply citizen-badge-warning;
+  }
+  
+  .protocol-status-in_progress {
+    @apply citizen-badge bg-purple-100 text-purple-800;
+  }
+  
+  .protocol-status-resolved {
+    @apply citizen-badge-success;
+  }
+  
+  .protocol-status-closed {
+    @apply citizen-badge bg-gray-100 text-gray-800;
+  }
+  
+  /* Loading states */
+  .citizen-skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+  
+  .citizen-skeleton-text {
+    @apply citizen-skeleton h-4 w-full;
+  }
+  
+  .citizen-skeleton-title {
+    @apply citizen-skeleton h-6 w-3/4;
+  }
+  
+  .citizen-skeleton-button {
+    @apply citizen-skeleton h-12 w-32;
+  }
+  
+  /* Accessibility improvements */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  /* Focus visible for better keyboard navigation */
+  .focus-visible {
+    @apply focus:outline-none focus:ring-2 focus:ring-citizen-primary/20 focus:ring-offset-2;
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .citizen-card {
+      @apply border-2 border-gray-900;
+    }
+    
+    .citizen-button-primary {
+      @apply border-2 border-citizen-primary;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    .citizen-card {
+      @apply shadow-none border border-gray-400;
+    }
+    
+    body {
+      @apply bg-white text-black;
+    }
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for citizen portal */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  /* Brazilian document input masks */
+  .mask-cpf::placeholder {
+    content: "000.000.000-00";
+  }
+  
+  .mask-phone::placeholder {
+    content: "(00) 00000-0000";
+  }
+  
+  .mask-cep::placeholder {
+    content: "00000-000";
+  }
+  
+  /* Gradient backgrounds */
+  .bg-citizen-gradient {
+    background: linear-gradient(135deg, #1351B4 0%, #168821 100%);
+  }
+  
+  .bg-citizen-gradient-light {
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  }
+}
